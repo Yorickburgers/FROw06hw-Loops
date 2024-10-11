@@ -1,5 +1,6 @@
 // ==========================================
 // Opdracht 1a
+
 // Schrijf een script dat voor iedere student in de array de score (het getal uit de property "score") in de terminal print
 
 const scores = [
@@ -16,12 +17,14 @@ const scores = [
 // 66
 // ==========================================
 
-
-
-
+// console.log("Opdracht 1a");
+// for (let i = 0; i < scores.length; i++) {
+//     console.log(scores[i].score);
+// }
 
 // ==========================================
 // Opdracht 1b
+
 // Breid je script uit door voor iedere student de score om te rekenen naar een letter en dit in de terminal te printen
 // < 60 = F, < 70 = D, <80 = C, <90 B, <100 = A
 // Zorg ervoor dat dit ook zou werken als de array wel 100 of 200 getallen zou bevatten!
@@ -32,8 +35,21 @@ const scores = [
 // D
 // ==========================================
 
-
-
+// console.log("Opdracht 1b");
+//
+// for (let i = 0; i < scores.length; i++) {
+//     if (scores[i].score < 60) {
+//         console.log("F");
+//     } else if (scores[i].score >= 60 && scores[i].score < 70) {
+//         console.log("D");
+//     } else if (scores[i].score >= 70 && scores[i].score < 80) {
+//         console.log("C");
+//     } else if (scores[i].score >= 80 && scores[i].score < 90) {
+//         console.log("B");
+//     } else {
+//         console.log("A");
+//     }
+// }
 
 
 // ==========================================
@@ -50,7 +66,23 @@ const scores = [
 // ==========================================
 
 
+console.log("Opdracht 1c");
 
+console.log(scores);
+for (let i = 0; i < scores.length; i++) {
+    if (scores[i].score < 60) {
+        scores[i].grade = "F";
+    } else if (scores[i].score >= 60 && scores[i].score < 70) {
+        scores[i].grade = "D";
+    } else if (scores[i].score >= 70 && scores[i].score < 80) {
+        scores[i].grade = "C";
+    } else if (scores[i].score >= 80 && scores[i].score < 90) {
+        scores[i].grade = "B";
+    } else {
+        scores[i].grade = "A";
+    }
+}
+console.log(scores);
 
 
 // ==========================================
@@ -75,16 +107,29 @@ const NOVIEmployees = [
 //  ];
 // ==========================================
 
+console.log("Opdracht 2 + Bonus");
 
+console.log(NOVIEmployees);
+for (let i = 0; i < NOVIEmployees.length; i++) {
+    NOVIEmployees[i].email = `${NOVIEmployees[i].firstName}.${NOVIEmployees[i].lastName}@novi.nl`.toLowerCase();
+}
+console.log(NOVIEmployees);
 
+// Ik ergerde me aan het feit dat sommige objects onder elkaar staan en die van Nova op één lijn.
+// Met de code hieronder staat het allemaal op één lijn.
+// Misschien weet jij een andere manier? Als ik Nova's naam met één letter verleng, staat dat object ook op multple lines.
+// Dus het lijkt erop dat de console een max-length heeft voor objects alvorens die besluit multiple lines te gebruiken voor één object.
 
+// for (let i = 0; i < NOVIEmployees.length; i++) {
+//     console.log(`{ firstName: '${NOVIEmployees[i].firstName}', lastName: '${NOVIEmployees[i].lastName}', email: '${NOVIEmployees[i].email}' }`);
+// }
 
 
 // Opdracht 2-BONUS
 // Lukt het je om ervoor te zorgen dat alle e-mailadressen in lowercase letters komen te staan? Dit heb je nog niet geleerd, maar google is your best friend...
 // ==========================================
 
-
+// toLowerCase() toegevoegd aan de for-loop
 
 
 // ==========================================
@@ -131,5 +176,51 @@ const students = [
 // ]
 // ==========================================
 
+console.log("Opdracht 3");
+for (let i = 0; i < students.length; i++) {
+    if (students[i].neighborhood === null) {
+        switch (students[i].zipCode) {
+            case "3512":
+                students[i].neighborhood = "Binnenstad";
+                break;
+            case "3513":
+                students[i].neighborhood = "Pijlsweerd";
+                break;
+            case "3514":
+                students[i].neighborhood = "Vogelenbuurt";
+                break;
+            case "3531":
+                students[i].neighborhood = "Lombok";
+                break;
+            case "3572":
+                students[i].neighborhood = "Wittevrouwen";
+                break;
+            case "3581":
+                students[i].neighborhood = "Oudwijk";
+                break;
+            case "3583":
+                students[i].neighborhood = "Schildersbuurt";
+                break;
+        }
+    }
+}
 
+// Dit kon korter:
+//
+// const neighborhoodMap = {
+//     "3512": "Binnenstad",
+//     "3513": "Pijlsweerd",
+//     "3514": "Vogelenbuurt",
+//     "3531": "Lombok",
+//     "3572": "Wittevrouwen",
+//     "3581": "Oudwijk",
+//     "3583": "Schildersbuurt",
+// };
+//
+// for (let i = 0; i < students.length; i++) {
+//     if (students[i].neighborhood === null) {
+//         students[i].neighborhood = neighborhoodMap[students[i].zipCode] || null;
+//     }
+// }
+console.log(students);
 
