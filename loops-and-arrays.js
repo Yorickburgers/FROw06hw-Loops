@@ -1,5 +1,6 @@
 // ==========================================
 // Opdracht 1
+console.log("Opdracht 1");
 // Schrijf een script dat iedere naam in onderstaande array vervangt door een koosnaampje, door er -"je" achter te plakken.
 // Zorg ervoor dat dit ook zou werken als de array wel 100 of 200 namen zou bevatten!
 // ==========================================
@@ -13,11 +14,16 @@ const names = ["Henk", "Piet", "Fred", "Joop"];
 // console.log(names) geeft: ["Henkje", "Pietje", "Fredje", "Joopje"]
 
 
-
+console.log(names);
+for (let i = 0; i < names.length; i++) {
+    names[i] = names[i] + "je";
+}
+console.log(names);
 
 
 // ==========================================
 // Opdracht 2
+console.log("Opdracht 2");
 // Schrijf een script dat ieder EVEN getal in onderstaande array met 2 vermenigvuldigd, en ieder ONEVEN getal met 3
 // Zorg ervoor dat dit ook zou werken als de array wel 100 of 200 getallen zou bevatten!
 // ==========================================
@@ -31,11 +37,20 @@ const numbers = [2, 4, 5, 29, 38];
 // console.log(numbers) geeft: [ 4, 8, 15, 87, 76 ];
 
 
-
+console.log(numbers);
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+        numbers[i] = numbers[i] * 2
+    } else {
+        numbers[i] = numbers[i] * 3
+    }
+}
+console.log(numbers);
 
 
 // ==========================================
 // Opdracht 3
+console.log("Opdracht 3");
 // Schrijf een script dat voor de maat van ieder vierkant in onderstaande array, het volume uitrekent.
 // Het volume van een vierkant is Lengte x Breedte x Hoogte
 // Vervolgens moet de huidige waarde in de array overschreven worden met: "Het volume van [a] is [b]"
@@ -57,5 +72,10 @@ const squares = [30, 2, 8, 24, 11];
 //   'Het volume van 11 is 1331'
 // ]
 
+console.log(squares);
+for (let i = 0; i < squares.length; i++) {
+    squares[i] = `Het volume van ${squares[i]} is ${squares[i] ** 3}`;
+}
+console.log(squares);
 
 
